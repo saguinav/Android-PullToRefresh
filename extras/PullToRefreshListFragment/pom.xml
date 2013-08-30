@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.github.chrisbanes.pulltorefresh</groupId>
 	<artifactId>extra-listfragment</artifactId>
 	<packaging>apklib</packaging>
 	<name>Android-PullToRefresh Extras: ListFragment</name>
@@ -11,20 +10,24 @@
 		<groupId>com.github.chrisbanes.pulltorefresh</groupId>
 		<artifactId>extras</artifactId>
 		<version>2.1.2-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
 	<dependencies>
 		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>android</artifactId>
+			<scope>provided</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.google.android</groupId>
 			<artifactId>support-v4</artifactId>
 			<version>r7</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>com.github.chrisbanes.pulltorefresh</groupId>
 			<artifactId>library</artifactId>
 			<type>apklib</type>
 			<version>${project.version}</version>
@@ -32,14 +35,16 @@
 	</dependencies>
 	
 	<build>
+		<sourceDirectory>src</sourceDirectory>
+
 		<plugins>
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<nativeLibrariesDirectory>ignored</nativeLibrariesDirectory>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
