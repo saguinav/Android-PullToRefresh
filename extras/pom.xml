@@ -4,13 +4,14 @@
 	
 	<groupId>com.github.chrisbanes.pulltorefresh</groupId>
 	<artifactId>extras</artifactId>
+    <version>2.1.2b-saguinav</version>
 	<packaging>pom</packaging>
 	<name>Android-PullToRefresh Extras</name>
 	
 	<parent>
 		<groupId>com.github.chrisbanes.pulltorefresh</groupId>
 		<artifactId>parent</artifactId>
-		<version>2.1.2-SNAPSHOT</version>
+		<version>2.1.2b-saguinav</version>
 	</parent>
 	
 	<modules>
